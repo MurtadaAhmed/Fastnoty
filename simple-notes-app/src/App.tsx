@@ -6,9 +6,10 @@ import NoteList from "./components/NoteList.tsx";
 function App() {
     const [notes, setNotes] = useState<Note[]>([])
 
-    const addNote = (text: string) => {
+    const addNote = (title: string, text: string) => {
         const newNote: Note = {
             id: Date.now(),
+            title,
             text,
         };
         setNotes([...notes, newNote])
@@ -19,9 +20,9 @@ function App() {
         setNotes(notes.filter((note) => note.id !== id))
     }
 
-    const editNote = (id: number, newText: string) => {
+    const editNote = (id: number,newTile: string, newText: string) => {
         setNotes(
-            notes.map((note) => note.id === id? {...note, text: newText}: note)
+            notes.map((note) => note.id === id? {...note, title: newTile, text: newText}: note)
         )
     }
 
