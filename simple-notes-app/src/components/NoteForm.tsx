@@ -1,22 +1,30 @@
 import {useState} from "react";
 
 type NoteFormProps = {
-    onAddNote: (text: string) => void;
+    onAddNote: (title: string, text: string) => void;
 }
 
 function NoteForm({ onAddNote }: NoteFormProps) {
 
+    const [title, setTitle] = useState("")
     const [text, setText] = useState("")
 
     const handleSubmit = (e : React.FormEvent) => {
         e.preventDefault();
         if (!text.trim()) return;
-        onAddNote(text)
+        onAddNote(title, text);
+        setTitle('')
         setText('')
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter title..."
+            />
             <input
             type="text"
             value={text}
