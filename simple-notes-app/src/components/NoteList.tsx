@@ -23,6 +23,7 @@ function NoteList({notes, onDeleteNote, onEditNote}: NoteListPros) {
                 <li key={note.id}>
                     <strong>{note.title}</strong>
                     <p>{note.text}</p>
+
                     <button onClick={() => onDeleteNote(note.id)}>Delete</button>
                     <button onClick={() => handleEdit(note.id, note.title, note.text)}>Edit</button>
 
