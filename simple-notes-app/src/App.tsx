@@ -19,11 +19,17 @@ function App() {
         setNotes(notes.filter((note) => note.id !== id))
     }
 
+    const editNote = (id: number, newText: string) => {
+        setNotes(
+            notes.map((note) => note.id === id? {...note, text: newText}: note)
+        )
+    }
+
     return (
         <div>
             <h1>Simple note app</h1>
             <NoteForm onAddNote={addNote} />
-            <NoteList notes={notes} onDeleteNote={deleteNote}/>
+            <NoteList notes={notes} onDeleteNote={deleteNote} onEditNote={editNote}/>
             <p>Total Notes: {notes.length}</p>
         </div>
     )
