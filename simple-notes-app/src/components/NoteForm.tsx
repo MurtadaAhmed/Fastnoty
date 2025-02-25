@@ -5,6 +5,13 @@ type NoteFormProps = {
 }
 
 function NoteForm({ onAddNote }: NoteFormProps) {
+    /*
+    1. onAddNote :
+    - this is imported from Apps.tsx <NoteForm onAddNote={addNote} />
+    2. handleSubmit:
+    - this function returns the form for submitting the title and text
+    - it captures the title and text, and then it passes it to onAddNote function >> onAddNote(title, text)
+     */
 
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
