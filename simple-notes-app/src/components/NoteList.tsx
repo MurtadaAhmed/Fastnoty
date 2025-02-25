@@ -21,7 +21,7 @@ function NoteList({notes, onDeleteNote, onEditNote}: NoteListPros) {
         <ul>
             {notes.map((note) => (
                 <li key={note.id}>
-                    <strong>{note.title}</strong>
+                    <strong>📝 {note.title}</strong>
                     <p>{note.text}</p>
 
                     <button onClick={() => onDeleteNote(note.id)}>Delete</button>

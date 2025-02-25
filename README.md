@@ -10,3 +10,16 @@ then select React >> Type script
 cd simple-notes-app
 npm install
 ```
+
+
+Start the frontend
+```shell
+cd .\simple-notes-app\
+npm run dev
+```
+
+Start the backend
+```shell
+cd .\backend\
+node dist/server.js
+```

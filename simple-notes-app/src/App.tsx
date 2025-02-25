@@ -45,7 +45,7 @@ function App() {
 
     return (
         <div>
-            <h1>Simple note app</h1>
+            <h1>📖 Simple note app</h1>
             <NoteForm onAddNote={addNote} />
             <NoteList notes={notes} onDeleteNote={deleteNote} onEditNote={editNote}/>
             <p>Total Notes: {notes.length}</p>
