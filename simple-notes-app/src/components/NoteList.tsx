@@ -7,6 +7,17 @@ type NoteListPros = {
 }
 
 function NoteList({notes, onDeleteNote, onEditNote}: NoteListPros) {
+    /*
+    1. {notes, onDeleteNote, onEditNote}:
+    - these functions are imported from App.tsx
+     <NoteList notes={notes} onDeleteNote={deleteNote} onEditNote={editNote}/>
+    2. handleEdit:
+    - this function list the notes, imported from App.tsx
+    - edit button captures the id, new title and new text and passes it to editNote function in App.tsx
+    onEditNote(id, newTitle, newText)
+    - delete button captures the id then it passes it to deleteNote function in App.tsx
+    onDeleteNote(note.id)
+     */
 
     const handleEdit = (id: number, currentTitle: string, currentText: string) => {
         const newTitle = prompt("Edit title", currentTitle)
