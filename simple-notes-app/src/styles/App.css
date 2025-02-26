@@ -81,3 +81,24 @@ strong {
   font-size: 1.2rem;
 }
 
+.submit-delete-all-button {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.delete-all-button {
+  background-color: #b15050;
+}
+
+.delete-all-button:hover {
+  background-color: #803b3b;
+}
+
+.delete-note-button {
+  background-color: #e88637;
+}
+
+.delete-note-button:hover {
+  background-color: #a56633;
+}
