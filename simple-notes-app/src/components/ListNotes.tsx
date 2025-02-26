@@ -1,6 +1,7 @@
 import {Note} from "../types"
 import EditNote from "./EditNote.tsx"
 import DeleteNote from "./DeleteNote.tsx"
+import {convertTimeStamp} from "./convertTimeStampToDate.tsx"
 
 type Props = {
     notes: Note[],
@@ -8,12 +9,16 @@ type Props = {
 }
 
 function ListNotes({ notes, setNotes}: Props) {
+
+    const sortedNotesDescendingOrder = [...notes].sort((a, b) => Number(b.id) - Number(a.id))
+
     return (
         <ul>
-            {notes.map((note: Note) =>
+            {sortedNotesDescendingOrder.map((note: Note) =>
                 <li key={note.id}>
                     <strong>📝 {note.title}</strong>
                     <p>{note.text}</p>
+                    <p>{convertTimeStamp(note.id)}</p>
                     <EditNote note={note} setNotes={setNotes} notes={notes} />
                     <DeleteNote id={note.id} setNotes={setNotes} notes={notes}/>
                 </li>
