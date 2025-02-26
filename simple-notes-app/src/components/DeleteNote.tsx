@@ -11,7 +11,7 @@ function DeleteNote ({id, notes, setNotes}: Props) {
         setNotes(notes.filter(note => note.id !== id))
     };
 
-    return <button onClick={deleteNote}>Delete</button>
+    return <button className='delete-note-button' onClick={deleteNote}>Delete</button>
 }
 
 export default DeleteNote

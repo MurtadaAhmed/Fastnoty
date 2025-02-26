@@ -37,7 +37,10 @@ function AddNoteForm({ notes, setNotes }: Props) {
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Enter a text"
             />
+            <div className='submit-delete-all-button'>
             <button type="submit">Add Note</button>
+            <button type="button" className='delete-all-button' onClick={() => setNotes([])}>Delete All Notes</button>
+            </div>
         </form>
     )
 }
